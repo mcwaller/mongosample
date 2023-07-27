@@ -1,0 +1,31 @@
+<%- include("template/cabecera", {tituloWeb:'Pagina de inicio'}) %> 
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+          <tr style="text-align: center;">
+            <th scope="Piso">Building</th>
+            <th scope="Nombre">Floor</th>
+            <th scope="Descripcion">Internal Number</th>
+            <th scope="Accion">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% if (arrayMascotas.length > 0) { %>
+                <% arrayMascotas.forEach(element => { %>
+                    <tr style="text-align: center;">
+                        <th scope="row"><%= element.Edificio %></th>
+                        <td><%= element.Piso %></td>
+                        <td><%= element['Numero interno'] %></td>
+                        <td><%= element.Tipo %></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+
+        </tbody>
+      </table>
+
+</div>
+
+<%- include("template/footer") %> 
